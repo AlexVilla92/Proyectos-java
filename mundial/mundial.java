@@ -19,14 +19,29 @@ class Mundial {
 		return list;
 	}
 
+	static void cargarBolillero(String line, Bolillero bol) {
+		String [] res = line.split(",");
+		int numberBombo = Integer.parseInt(res[0]);
+		int numberConf = Integer.parseInt(res[2]);
+		int ranking = Integer.parseInt(res[3]);
+		//System.out.println(numberBombo + " " + res[1] + " " + numberConf + " " + ranking);
+		Seleccion pais = new Seleccion(numberBombo, res[1], numberConf, ranking);
+
+		bol.cargarBombo(pais);
+	}
+
 	public static void main(String[] args) {
+		Bolillero bol = new Bolillero();
 		try {
 			List<String> list = readFile();
 			for (String line: list) {
-				System.out.println(line);
+				cargarBolillero(line, bol);
 			}
 		} catch(IOException e) {
 			e.printStackTrace();
-		}
+		}	
+
+		bol.getSizeBombos();
+
 	}
 }
