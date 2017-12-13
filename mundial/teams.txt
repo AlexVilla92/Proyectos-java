@@ -1,0 +1,32 @@
+1,Rusia,1,65
+1,Alemania,1,1
+1,Brasil,2,2
+1,Portugal,1,3
+1,Argentina,2,4
+1,Belgica,1,5
+1,Polonia,1,6
+1,Francia,1,7
+2,Espania,1,8
+2,Peru,2,10
+2,Suiza,1,11
+2,Inglaterra,1,12
+2,Colombia,2,13
+2,Mexico,4,16
+2,Uruguay,2,17
+2,Croacia,1,18
+3,Dinamarca,1,19
+3,Islandia,1,21
+3,CostaRica,4,22
+3,Suecia,1,25
+3,Tunez,3,28
+3,Egipto,3,30
+3,Senegal,3,32
+3,Iran,5,34
+4,Serbia,1,38
+4,Nigeria,3,41
+4,Australia,5,43
+4,Japon,5,44
+4,Marruecos,3,48
+4,Panama,4,49
+4,Corea del Sur,5,62
+4,Arabia Saudita,5,63
