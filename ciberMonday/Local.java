@@ -3,19 +3,21 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 
-public class Local {
+public class Local implements Establecimiento{
 
     private String nombreLocal;
     private Map<String, List<Venta>> ventas;//refactoring usar JodaTime en lugar de string
-    private Map<Integer, Producto> productosDelLocal;
+    private List<Venta> ventasGenerales;
 
     public Local(String unNombre) {
         this.nombreLocal = unNombre;
         this.ventas = new HashMap<String, List<Venta>>();
-        this.productosDelLocal = new HashMap<Integer, Producto>();
+        this.ventasGenerales = new ArrayList<Venta>();
+        //this.productosDelLocal = new HashMap<Integer, Producto>();
     }
 
     public void agregarVenta(String unaFecha, Venta unaVenta) {
+        this.ventasGenerales.add(unaVenta);
         if (this.ventas.containsKey(unaFecha)) {
             List<Venta> unaListaVenta = this.ventas.get(unaFecha);
             unaListaVenta.add(unaVenta);
@@ -80,5 +82,25 @@ public class Local {
         }
 
         return ahorro;
+    }
+
+    public Integer cantidadDeVentasPorLugar(String unLugar) {
+        Integer ventasPorLugar = 0;
+
+        for (Venta unaVenta: this.ventasGenerales) {
+            if (unaVenta.ventaEnLugar(unLugar)) ventasPorLugar++;
+        }
+
+        return ventasPorLugar;
+    }
+
+    public Double dineroMovido() {
+        Double dinero = 0.0;
+
+        for (Venta unaVenta: this.ventasGenerales) {
+            dinero = dinero + unaVenta.calcularPrecioVenta();           
+        }
+
+        return dinero;
     }
 }

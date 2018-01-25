@@ -18,6 +18,10 @@ public class Venta {
         this.lugar = lugar;
     }
 
+    public boolean ventaEnLugar(String unLugar) {
+        return (this.lugar == unLugar);
+    }
+
     public Double calcularVenta() {
         return 0.00;
     }
