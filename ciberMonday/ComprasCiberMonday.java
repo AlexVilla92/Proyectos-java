@@ -19,6 +19,7 @@ public class ComprasCiberMonday {
         unaVenta.agregarProducto(heladera);
         unaVenta.agregarProducto(silla);
 
+        caballito.agregarVenta("23/20/2017", unaVenta);
 
         System.out.println("precio de la heladera es: " + unaVenta.calcularPrecio(heladera) + " pesos");
         System.out.println("precio de la remera es: " + unaVenta.calcularPrecio(remera) + " pesos");
@@ -26,8 +27,13 @@ public class ComprasCiberMonday {
 
         System.out.println("el precio total de la venta es: " + unaVenta.calcularPrecioVenta() + " pesos");
 
-        System.out.println("cantidad de ventas con productos en promocion: " + unaVenta.cantidadVentasPromocion() + " productos");
+        System.out.println("cantidad de ventas con productos en promocion: " + caballito.cantVentasEnPromocion() + " productos");
 
+        System.out.println("cantidad de ventas para el dia 23/20/2017: " + caballito.ventasPorFecha("23/20/2017") + " productos");
+        System.out.println("cantidad de ventas para el dia 24/20/2017: " + caballito.ventasPorFecha("24/20/2017") + " productos");
+
+        System.out.println("dinero ahorrado en local caballito en fecha 23/20/2017: " + caballito.ahorroPorFecha("23/20/2017"));
+    
     }
 
 

@@ -11,10 +11,10 @@ public class Indumentaria extends Producto{
 
     @Override
     public Double calcularPrecio() {
-        Double costo = this.getTalle() * this.getFactorConversion();
-        Double miDescuento = super.unaPromo.aplicarDescuento(costo);
+        super.precio = this.getTalle() * this.getFactorConversion();
+        super.descuento = super.unaPromo.aplicarDescuento(super.precio);
 
-        return (costo - miDescuento);
+        return (super.precio - super.descuento);
     }
 
     public Integer getTalle() {

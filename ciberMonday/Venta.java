@@ -40,15 +40,23 @@ public class Venta {
         return precioVenta;
     }
 
-    public Integer cantidadVentasPromocion() {
-        Integer cantidadPromociones = 0;
-
+    public boolean tieneProductoEnPromocion() {
         for (Map.Entry<Integer, Producto> entry : this.productos.entrySet()) {
             Producto unProducto = entry.getValue();
-
-            if (unProducto.tienePromocion()) cantidadPromociones++;
+            if (unProducto.tienePromocion()) return true;
         }
 
-        return cantidadPromociones;
+        return false;
+    }
+
+    public Double ahorroDeVenta() {
+        Double descuentos = 0.0;
+        
+        for (Map.Entry<Integer, Producto> entry : this.productos.entrySet()) {
+            Producto unProducto = entry.getValue();
+            descuentos = descuentos + unProducto.getDescuento();
+        }
+
+        return descuentos; 
     }
 }

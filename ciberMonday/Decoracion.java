@@ -25,10 +25,10 @@ public class Decoracion extends Producto {
 
     @Override
     public Double calcularPrecio() {
-        Double costo = (this.getAlto() * this.getAncho() * this.getPeso()) + this.getPrecioMateriales();
-        Double miDescuento = super.unaPromo.aplicarDescuento(costo);
+        super.precio = (this.getAlto() * this.getAncho() * this.getPeso()) + this.getPrecioMateriales();
+        super.descuento = super.unaPromo.aplicarDescuento(super.precio);
 
-        return (costo - miDescuento);
+        return (super.precio - super.descuento);
     }
 
     private Double getPrecioMateriales() {

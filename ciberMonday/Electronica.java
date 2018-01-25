@@ -9,9 +9,9 @@ public class Electronica extends Producto {
 
     @Override
     public Double calcularPrecio() {
-        Double costo = constanteConversion * constanteElectronica;
-        Double miDescuento = super.unaPromo.aplicarDescuento(costo);
+        super.precio = constanteConversion * constanteElectronica;
+        super.descuento = super.unaPromo.aplicarDescuento(super.precio);
 
-        return (costo - miDescuento);
+        return (super.precio - super.descuento);
     }
 }
